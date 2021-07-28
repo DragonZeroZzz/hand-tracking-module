@@ -3,7 +3,7 @@ import mediapipe as mp
 import time
 
 class hand_detector():
-    def __init__(self,mode=False,max_hand=2,detection_confidence=0.5,tracking_confidence=0.5):
+    def __init__(self,mode=False,max_hand=2,detection_confidence=0.65,tracking_confidence=0.65):
         self.mode = mode
         self.max_hand = max_hand
         self.detection_confidence = detection_confidence
@@ -57,7 +57,7 @@ def main():
         fps = 1/(cTime-pTime)
         pTime = cTime
 
-        cv2.putText(img,str(int(fps)),(10,60),cv2.FONT_HERSHEY_COMPLEX,1,(255,0,0),2)
+        cv2.putText(img,"FPS:"+str(int(fps)),(550,20),cv2.FONT_HERSHEY_COMPLEX,0.5,(255,0,0),1)
 
         cv2.imshow("Image",img)
         cv2.waitKey(1)
